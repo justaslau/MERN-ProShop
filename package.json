@@ -1,0 +1,31 @@
+{
+  "name": "mern-shop",
+  "version": "1.0.0",
+  "description": "MERN Shopping App",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justaslau/MERN-ProShop.git"
+  },
+  "author": "Justas Lauzinskas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justaslau/MERN-ProShop/issues"
+  },
+  "homepage": "https://github.com/justaslau/MERN-ProShop#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.2",
+    "nodemon": "^2.0.16"
+  }
+}
