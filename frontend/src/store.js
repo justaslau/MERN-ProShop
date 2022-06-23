@@ -5,15 +5,27 @@ import {
   productDetailsReducer,
 } from './reducers/productReducers';
 
+import { cartReducer } from './reducers/cartReducers';
+
+const cartItemsFromStorage = localStorage.getItem('cartItems')
+  ? JSON.parse(localStorage.getItem('cartItems'))
+  : [];
+
+const initialState = {
+  cart: {
+    cartItems: cartItemsFromStorage,
+  },
+};
+
 const reducer = combineReducers({
   productList: productListReducer,
   productDetails: productDetailsReducer,
+  cart: cartReducer,
 });
-const initialState = {};
 
 const store = configureStore({
   reducer,
-  initialState,
+  preloadedState: initialState,
 });
 
 export default store;
